@@ -5,7 +5,7 @@ const orm = {
     selectAll: async (table) => {
         try {
             const query = `SELECT * FROM ${table}`;
-            return await connection.query(query, table);
+            return await connection.query(query);
         } catch (err) {
             if (err) throw err;
         }
