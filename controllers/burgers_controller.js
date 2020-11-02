@@ -10,28 +10,15 @@ const router = express.Router();
 // });
 
 
-// router.get("/", async (req, res) => {
-//     burger.selectAll().then((data) => {
-//         let hbsObj = {
-//             burgers: data
-//         };
-//         res.render("index", hbsObj);
-//     });
-// });
-
 router.get("/", async (req, res) => {
-    burger.selectAll().then((result) => {
-      // Get all burgers and seperate them into either eaten or uneaten
-      const eaten = [];
-      const uneaten = [];
-      result.forEach((element) => (element.devoured ? eaten.push(element) : uneaten.push(element)));
-  
-      // Pass both arrays and change button text to Submit
-      res.render("index", {
-        eaten, uneaten, btnText: "Submit", new: true,
-      });
+    burger.selectAll().then((data) => {
+        let hbsObj = {
+            burgers: data
+        };
+        res.render("index", hbsObj);
     });
-  });
+});
+
 
     router.post("/api/burgers", async (req, res) => {
         burger.insertOne(["burger_name"], req.body.burger_name).then((input) => {
