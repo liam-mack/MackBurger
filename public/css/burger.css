@@ -11,6 +11,18 @@ header {
     padding: 5rem 0 5rem 0 
 }
 
+#newOrder{
+    align-content: center;
+}
+
+.btn-outline-danger {
+    margin: 1rem 0 1rem 0;
+}
+
+.form {
+text-align: center;
+}
+
 header h1{
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
 }
@@ -20,7 +32,7 @@ header h4 {
 }
 
 .input-group {
-    align-content: center;
+    text-align: center;
 }
 
 .burger-menu {
