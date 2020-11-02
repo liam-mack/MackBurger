@@ -4,7 +4,7 @@ const connection = require("./connection.js");
 const orm = {
     selectAll: async (table) => {
         try {
-            const query = `SELECT * FROM ${table}`;
+            const query = `SELECT * FROM ${table};`;
             return await connection.query(query);
         } catch (err) {
             if (err) throw err;
@@ -13,7 +13,7 @@ const orm = {
 
     insertOne: async (table, col, burger) => {
         try {
-            const query = "INSERT INTO ??(??) values (?)";
+            const query = "INSERT INTO ??(??) values (?);";
             return await connection.query(query, [table, col, burger]);
         } catch (err) {
             if (err) throw err;
@@ -22,7 +22,7 @@ const orm = {
 
     updateOne: async (table, state, burger) => {
         try {
-            const query = "UPDATE ?? SET ? WHERE ?";
+            const query = "UPDATE ?? SET ? WHERE ?;";
             return await connection.query(query, [table, state, burger]);
             
         } catch(err) {
@@ -32,7 +32,7 @@ const orm = {
 
     deleteOne: async (table, burger) => {
         try {
-            let query = "DELETE FROM ?? WHERE ?";
+            let query = "DELETE FROM ?? WHERE ?;";
             return await connection.query(query, [table, burger]);
         } catch (err) {
             if (err) throw err;
