@@ -19,6 +19,7 @@ dbConnect = () => {
   let connection;
   if (process.env.JAWSDB_URL) {
     connection = mysql.createConnection(process.env.JAWSDB_URL);
+    console.log("JAWSDB")
   } else {
     connection = mysql.createConnection({
       host: "localhost",
@@ -28,10 +29,10 @@ dbConnect = () => {
       database: "burgers_db",
     });
     // }
-    // Eliminates Node.js callbacks in ORM by promisifying native sql query function
+    // Eliminates Node.js callbacks in ORM by promisifying sql query function
     return {
-      query(sql, input) {
-        return util.promisify(connection.query).call(connection, sql, input);
+      query(db, input) {
+        return util.promisify(connection.query).call(connection, db, input);
       },
     };
   }
