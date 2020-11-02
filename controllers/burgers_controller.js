@@ -54,10 +54,16 @@ router.get("/", async (req, res) => {
         });
     });
     router.get("*", async (req, res) => {
-        res.redirect("/");
+        burger.selectAll().then((data) => {
+            console.log(data);
+            // res.json(data)
+            let hbsObj = {
+                burgers: data
+            };
+            res.render("index", hbsObj);
       });
+    });
 
 module.exports = router;
 
-console.log("controllers")
-
+console.log("controllers");
