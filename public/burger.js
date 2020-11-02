@@ -24,6 +24,18 @@ $(() => {
             location.reload();
         });
     });
+    $(".wrongOrder").on("click", (e) => {
+        e.preventDefault();
+        let id = $(e.target).data("id");
+        let devoured = { devoured: 0};
+
+        $.ajax(`/api/burgers/${id}`, {
+            type: "PUT",
+            data: devoured
+        }).then(()=> {
+            location.reload();
+        });
+    });
 
     $(".clearTable").on("click", (e) => {
         e.preventDefault();

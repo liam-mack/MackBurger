@@ -6,20 +6,22 @@
     <h1>Order Your Burger </h1>
     <form class="form">
         <div class="input-group" style="max-width: 100%;">
-            <input type="text" id="newOrder" name="order" class="form-control" placeholder="Please place your order" aria-label="input">
+            <input type="text" id="newOrder" name="order" class="form-control" placeholder="Please place your order..." aria-label="input">
         </div>
         <button class="btn btn-outline-danger" type="submit" id="addOrder">Order Up!</button>
 
     </form>
     <div class="row">
         <div class="col-sm-6">
-            <h3 class="text-center">Queued Orders</h3>
+            <h3 class="text-center">Prepared Orders</h3>
             <ul class="list-group">
                 {{#each burgers}}
                 {{#unless devoured}}
                 <li class="list-group-item list-group-item"> {{this.id}} - {{this.burger_name}}
                     <button type="button" class=" devourBtn btn btn-outline-danger float-right"
-                        data-id="{{this.id}}" data-newDevoured="{{devour}}">Devour</button></li>
+                        data-id="{{this.id}}" data-devoured="{{devour}}">Devour</button></li>
+                    <button type="button" class="clearTable btn btn-outline-danger float-right"
+                        data-id="{{this.id}}" data-devoured="{{devour}}">Remove order</button></li>
                 {{/unless}}
                 {{/each}}
             </ul>
@@ -30,8 +32,10 @@
                 {{#each burgers}}
                 {{#if devoured}}
                 <li class="list-group-item list-group-item-danger"> {{this.id}} - {{this.burger_name}}
-                    <button type="button" class="clearTable btn btn-outline-secondary float-right"
-                        data-id="{{this.id}}" data-newDevoured="{{devour}}">Clean Table</button></li>
+                    <button type="button" class="wrongOrder btn btn-outline-primary float-right"
+                        data-id="{{this.id}}" data-devoured="{{devour}}">Wrong Order</button></li>
+                    <button type="button" class="clearTable btn btn-outline-primary float-right"
+                        data-id="{{this.id}}" data-devoured="{{devour}}">Clear Table</button></li>
                 {{/if}}
                 {{/each}}
             </ul>

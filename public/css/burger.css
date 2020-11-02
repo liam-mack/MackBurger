@@ -12,10 +12,12 @@ header {
 }
 
 #newOrder{
-    align-content: center;
+    margin: auto;
+    max-width: 200px;
+    margin-bottom: 1rem;
 }
 
-.btn-outline-danger {
+.devourBtn {
     margin: 1rem 0 1rem 0;
 }
 

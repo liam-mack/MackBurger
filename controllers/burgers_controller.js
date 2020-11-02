@@ -39,8 +39,9 @@ router.get("/", async (req, res) => {
             } else {
                 res.status(200).end();
             }
-        })
-    })
+        });
+    });
+
     router.delete("/api/burgers/:id", async (req, res) => {
         const id = { id: req.params.id };
         const devoured = req.body;
