@@ -11,14 +11,14 @@ const router = express.Router();
 
 
 router.get("/", async (req, res) => {
-    res.render("index")
+    // res.render("index")
 
-    // burger.selectAll().then((data) => {
-    //     let hbsObj = {
-    //         burgers: data
-    //     };
-    //     res.render("index", hbsObj);
-    // });
+    burger.selectAll().then((data) => {
+        let hbsObj = {
+            burgers: data
+        };
+        res.render("index", hbsObj);
+    });
 });
 
 
