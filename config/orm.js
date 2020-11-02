@@ -22,7 +22,6 @@ const orm = {
 
     updateOne: async (table, state, burger) => {
         try {
-            console.log(`burger is: ${burger}`)
             const query = "UPDATE ?? SET ? WHERE ?";
             return await connection.query(query, [table, state, burger]);
             
@@ -32,7 +31,6 @@ const orm = {
     },
 
     deleteOne: async (table, burger) => {
-        console.log(`burger is ${burger}`)
         try {
             let query = "DELETE FROM ?? WHERE ?";
             return await connection.query(query, [table, burger]);
@@ -43,5 +41,3 @@ const orm = {
 }
 module.exports = orm;
 
-console.log("orm")
-// console.log(`burger is: ${burger}`)

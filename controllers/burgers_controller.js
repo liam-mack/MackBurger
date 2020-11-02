@@ -12,8 +12,6 @@ router.get("/hello", (req, res) => {
 
 router.get("/", async (req, res) => {
     burger.selectAll().then((data) => {
-        console.log(data);
-        // res.json(data)
         let hbsObj = {
             burgers: data
         };
@@ -30,8 +28,7 @@ router.get("/", async (req, res) => {
     router.put("/api/burgers/:id", async (req, res) => {
         const state = { id: req.params.id };
         const devoured = req.body;
-        console.log(req.body)
-        console.log(state)
+
 
         burger.updateOne(devoured, state).then((output) => {
             if (output.changedRows === 0) {
@@ -54,16 +51,10 @@ router.get("/", async (req, res) => {
         });
     });
     router.get("*", async (req, res) => {
-        burger.selectAll().then((data) => {
-            console.log(data);
-            // res.json(data)
-            let hbsObj = {
-                burgers: data
-            };
-            res.render("index", hbsObj);
+        res.redirect("/");
       });
-    });
 
 module.exports = router;
 
-console.log("controllers");
+console.log("controllers")
+

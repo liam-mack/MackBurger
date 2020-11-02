@@ -7,4 +7,4 @@ CREATE TABLE burgers (
     burger_name VARCHAR(50) NOT NULL,
     devoured BOOLEAN default false,
     PRIMARY KEY (id)
-)
+);
