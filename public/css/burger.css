@@ -1,0 +1,42 @@
+body {
+    background-image: url("/background.jpg");
+    background-position: center ;
+    background-repeat: repeat-y;
+    background-size: cover ;
+}
+
+header {
+    background-image: linear-gradient(red,orange);
+    color: yellow;
+    padding: 5rem 0 5rem 0 
+}
+
+header h1{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+}
+
+header h4 {
+    font-family: cursive;
+}
+
+.input-group {
+    align-content: center;
+}
+
+.burger-menu {
+    margin-top: 5rem;
+    max-width: 80%;
+    background-color: white;
+    opacity: 0.9;
+    border-radius: 25px;
+}
+
+.burger-menu h1, h3 {
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: red;
+}
+
+.list-group{
+    margin-bottom: 5rem;
+}
