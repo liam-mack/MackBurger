@@ -7,6 +7,11 @@ dbConnect = () => {
   let connection;
   if (process.env.JAWSDB_URL) {
     connection = mysql.createConnection(process.env.JAWSDB_URL);
+    return {
+      query(db, input) {
+        return util.promisify(connection.query).call(connection, db, input);
+      },
+    };
   } else {
     connection = mysql.createConnection({
       host: "localhost",
