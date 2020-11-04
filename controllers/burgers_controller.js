@@ -10,6 +10,7 @@ const router = express.Router();
 // });
 
 
+// GET request & route to render index template with injected handlebars object
 router.get("/", async (req, res) => {
     // res.render("index")
 
@@ -21,13 +22,14 @@ router.get("/", async (req, res) => {
     });
 });
 
-
+// POST request & route to insert new order/burger name
     router.post("/api/burgers", async (req, res) => {
         burger.insertOne(["burger_name"], req.body.burger_name).then((input) => {
             res.json({ id: input.insertId });
         })
     });
 
+    // PUT request & route to handle SQL update query
     router.put("/api/burgers/:id", async (req, res) => {
         const state = { id: req.params.id };
         const devoured = req.body;
@@ -42,6 +44,7 @@ router.get("/", async (req, res) => {
         });
     });
 
+    // DELETE request & route to remove burgers
     router.delete("/api/burgers/:id", async (req, res) => {
         const id = { id: req.params.id };
         const devoured = req.body;
@@ -60,5 +63,5 @@ router.get("/", async (req, res) => {
 
 module.exports = router;
 
-console.log("controllers")
+// console.log("controller")
 

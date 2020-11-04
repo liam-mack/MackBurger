@@ -1,5 +1,6 @@
 const orm = require("../config/orm.js");
 
+// Pass through inputs to be handled by custom ORM
 const burgerMenu = {
 
     selectAll: async () => orm.selectAll("burgers"),
@@ -14,4 +15,4 @@ const burgerMenu = {
 
 module.exports = burgerMenu;
 
-console.log("models");
+// console.log("model");
